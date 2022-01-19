@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="firebase.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="carousel-container">
+        <i class="fas fa-arrow-left"id= "preBtn" ></i>
+        <i class="fas fa-arrow-right"id= "nextBtn" ></i>
+        <div class="carousel-slide"> 
+        <img src="Sleep-and-ASD.jpg" alt=""width="750" height="500"id="lastClone">
+         
+        <img src="todoimg1.jpg" alt="">
+        <img src="todoimg3.webp" alt="">
+        <img src="todoimg4.webp" alt="">
+        <img src="Sleep-and-ASD.jpg" alt=""width="750" height="500">
+        <img src="todoimg1.jpg" id="firstClone"> 
+        </div>
+         </div>
+     
+    <div class="container">
+        <div class="header">
+            <div class="title">
+                TODO
+            </div>
+            <div class="theme">
+                <img src="icon-sun.svg">
+            </div>
+        </div>
+        <div class="new-todo">
+            <div class="check">
+                <div class="check-mark">
+                </div>
+            </div>
+            <div class="new-todo-input">
+                <form onsubmit="addItem(event)">
+                    <input id="todo-input" type="text" placeholder="Create a new todo..." />
+                </form>
+            </div>
+        </div>
+        <div class="todo-items-wrapper">
+            <div class="todo-items">
+                <div class="todo-item">
+                    <div class="check">
+                        <div class="check-mark checked">
+                            <img src="icon-check.svg">
+                        </div>
+                    </div>
+                    <div class="todo-text checked">
+                        Cut the lawn
+                    </div>
+                </div>
+                <div class="todo-item">
+                    <div class="check">
+                        <div class="check-mark">
+                            
+                        </div>
+                    </div>
+                    <div class="todo-text">
+                        Cut the lawn
+                    </div>
+                </div>
+                <div class="todo-item">
+                    <div class="check">
+                        <div class="check-mark">
+                        </div>
+                    </div>
+                    <div class="todo-text">
+                        Cut the lawn
+                    </div>
+                </div>
+            </div>
+            <div class="todo-items-info">
+                <div class="items-left">
+                    5 items left
+                </div>
+                <div class="items-statuses">
+                    <span class="active">All</span>
+                    <span>Active</span>
+                    <span>Completed</span>
+                </div>
+                <div class="items-clear">
+                    <span>Clear Completed</span>
+                </div>
+            </div>
+        </div>
+     
+</div>
+    
+</body>
+</html>
+     
+       <script src="script.js"></script>
+</body>
+ 
+</html>
