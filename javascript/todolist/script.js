@@ -21,7 +21,7 @@ function generateItems(items){
         checkContainer.classList.add("check");
         let checkMark = document.createElement("div");
         checkMark.classList.add("check-mark");
-        checkMark.innerHTML = '<img src="assets/icon-check.svg">';
+        checkMark.innerHTML = '<img src="icon-check.svg">   '
         checkMark.addEventListener("click", function(){
             markCompleted(item.id);
         })
@@ -40,6 +40,8 @@ function generateItems(items){
         todoItems.push(todoItem)
     })
     document.querySelector(".todo-items").replaceChildren(...todoItems);
+    countActive();
+
 }
 
 
@@ -52,6 +54,7 @@ function addItem(event){
         status: "active"
     })
     text.value = "";
+    countAll();
 }
 
 function markCompleted(id){
@@ -70,15 +73,76 @@ function markCompleted(id){
         }
     })
 }
-function deleteCompleted(){
+ function deleteCompleted(){
     var item = db.collection('todo-items').where('status','==','completed');
     item.get().then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
         doc.ref.delete();
+        countAll();
+         
       });
+       
+    
+    
+    
     });
+
     
 }
-
+   function countAll(){
+        // console.log("runningcountAll");
+        db.collection("todo-items")
+          .get()
+          .then(snap => {
+            size = snap.size;
+            document.getElementById("counter").innerHTML = size;
+          });
+      }
+      function countActive(){
+        // console.log("runningcountactive");
+        db.collection("todo-items").where('status','==','active' )
+          .get() 
+          .then(snap => {
+            size = snap.size;
+            document.getElementById("counterA").innerHTML = size;
+          });
+      }
+      
+       
 
 getItems();
+countAll();
+countActive();
+
+ 
+const element = document.getElementById('item-clear').addEventListener('click', function () {
+   
+
+
+    swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this task!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Poof! Your  task has been deleted!", {
+            icon: "success",
+          });
+        } else {
+          swal("Your  task is safe!");
+        }
+      });
+      
+   
+
+})
+ setInterval(updateTime,1000);
+ function updateTime(){
+  let d = new Date()
+   time.innerHTML = d.toLocaleString("en-AU") ;
+ }
+  
+ 

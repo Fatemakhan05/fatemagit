@@ -1,12 +1,12 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyDsLPAd2E3vAhmZtbRNr1NuvuRwWBjowqg",
-    authDomain: "todolistproject-e0e05.firebaseapp.com",
-    projectId: "todolistproject-e0e05",
-    storageBucket: "todolistproject-e0e05.appspot.com",
-    messagingSenderId: "1032103099317",
-    appId: "1:1032103099317:web:83ced75de4723e0f2077fc",
-    measurementId: "G-EJKL39DJE1"
-  };
+  apiKey: "AIzaSyCJw02TpdSSeu4sX4aVbQrmuxAWuFWY9KY",
+  authDomain: "todolistfinal-15f40.firebaseapp.com",
+  projectId: "todolistfinal-15f40",
+  storageBucket: "todolistfinal-15f40.appspot.com",
+  messagingSenderId: "451726281474",
+  appId: "1:451726281474:web:5c3df25f0527c81d9ed01b",
+  measurementId: "G-4Z9VTWN29V"
+};
   firebase.initializeApp(firebaseConfig);
 
 firebase.analytics();
